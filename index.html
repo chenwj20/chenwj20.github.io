@@ -151,6 +151,151 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Object类的方法们" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/02/Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%AC/">Object类的方法们</a>
+    </h1>
+  
+
+        
+        
+<a href="/2019/12/02/Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%AC/" class="archive-article-date">
+  	<time datetime="2019-12-02T13:25:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">927字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+	   
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Object类有哪些方法？"><a href="#Object类有哪些方法？" class="headerlink" title="Object类有哪些方法？"></a>Object类有哪些方法？</h3><p>这个图是JDK8的方法 ，IDEA快捷键   Alt+7  查看</p>
+<p><img src="https://i.loli.net/2019/12/02/GLw94IdTzntkWZa.jpg" alt="object.JPG"> </p>
+<h4 id="1．getClass方法"><a href="#1．getClass方法" class="headerlink" title="1．getClass方法"></a>1．getClass方法</h4><p>​    final修饰方法，本地方法，返回运行时类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> Class&lt;?&gt; getClass();</span></pre></td></tr></table></figure>
+
+<p>需要注意一点：虽然getClass() 方法声明返回 Class&lt;?&gt;，但是编译时返回时的如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Class&lt;? extends String&gt; c = <span class="string">"chen"</span>.getClass();</span></pre></td></tr></table></figure>
+
+<p>你没看错字符串返回 Class<? extends String>，也就是说类型为T的变量getClass()方法的返回值类型其实是Class<? extends T>而非getClass方法声明中的Class<?></p>
+<p>详情看官方文档：<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#getClass--" target="_blank" rel="noopener">https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#getClass--</a></p>
+<h4 id="2．hashCode-方法"><a href="#2．hashCode-方法" class="headerlink" title="2．hashCode 方法"></a>2．hashCode 方法</h4><p>​    本地方法，hashCode方法就是根据一定的规则将与对象相关的信息（比如对象的存储地址，对象的字段等）映射成一个数值，这个数值称作为散列值。重写了equals方法一般都要重写hashCode方法，一般来说两个对象，obj1.equals(obj2)==true，可以推出obj1.hashCode()==obj2.hashCode()，但是hashCode相等不一定就满足equals为ture。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</span></pre></td></tr></table></figure>
+
+<h4 id="3．equals方法"><a href="#3．equals方法" class="headerlink" title="3．equals方法"></a>3．equals方法</h4><p>​    这个方法大家应该都很熟悉，比较两个对象是否相等，没有重写该方法就相当于 == ，大部分类都重写了该方法，自己可以自定义比较规则。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr></table></figure>
+
+<h4 id="4．clone方法"><a href="#4．clone方法" class="headerlink" title="4．clone方法"></a>4．clone方法</h4><p>​    protected修饰，本地方法、实现对象的浅复制，只有实现了Cloneable接口（Cloneable接口实质是一个标识接口，没有任何的接口方法）才可以调用该方法，否则抛出CloneNotSupportedException异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">native</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>;</span></pre></td></tr></table></figure>
+
+<h4 id="5．toString方法"><a href="#5．toString方法" class="headerlink" title="5．toString方法"></a>5．toString方法</h4><p>​    这个方法用得比较多，一般子类都有覆盖。返回对象字符串表示形式，默认 : 全类名  + @  +hashCode16进制</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> getClass().getName() + <span class="string">"@"</span> + Integer.toHexString(hashCode());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr></table></figure>
+
+<h4 id="6．wait方法"><a href="#6．wait方法" class="headerlink" title="6．wait方法"></a>6．wait方法</h4><p>​    final方法、用于线程之间的通信，wait()的作用是让当前线程进入等待状态，同时，wait()也会让当前线程释放它所持有的锁。wait(long timeout)设定一个超时间隔，如果在规定时间内没有获得锁就返回。当其他线程调用此对象的 notify() 方法或 notifyAll() 方法”，当前线程被唤醒(进入“就绪状态”)</p>
+<p>三个重载：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//无参</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        wait(<span class="number">0</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Long类型参数，超时间隔</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout)</span> <span class="keyword">throws</span> InterruptedException</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//两参数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout, <span class="keyword">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (timeout &lt; <span class="number">0</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"timeout value is negative"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (nanos &lt; <span class="number">0</span> || nanos &gt; <span class="number">999999</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">                                <span class="string">"nanosecond timeout value out of range"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (nanos &gt; <span class="number">0</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">            timeout++;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        wait(timeout);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr></table></figure>
+
+<h4 id="8．notify方法"><a href="#8．notify方法" class="headerlink" title="8．notify方法"></a>8．notify方法</h4><p>final修饰，本地方法，该方法唤醒在该对象上等待的某个线程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">notify</span><span class="params">()</span></span>;</span></pre></td></tr></table></figure>
+
+<h4 id="9．notifyAll方法"><a href="#9．notifyAll方法" class="headerlink" title="9．notifyAll方法"></a>9．notifyAll方法</h4><p>final修饰，本地方法，该方法唤醒在该对象上等待的所有线程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">notifyAll</span><span class="params">()</span></span>;</span></pre></td></tr></table></figure>
+
+<h4 id="10．finalize-方法"><a href="#10．finalize-方法" class="headerlink" title="10．finalize 方法"></a>10．finalize 方法</h4><p>该方法用于垃圾回收，一般由 JVM 自动调用，一般不需要程序员去手动调用该方法 ，现在方法已过时</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123; &#125;</span></pre></td></tr></table></figure>
+
+<p> java提供finalize()方法，垃圾回收器准备释放内存的时候，会先调用finalize()。</p>
+<p>注意：</p>
+<p>​        1.对象不一定会被回收。</p>
+<p>​        2.垃圾回收不是析构函数。</p>
+<p>​        3.垃圾回收只与内存有关。</p>
+<p>​        4.垃圾回收和finalize()都是靠不住的，只要JVM还没有快到耗尽内存的地步，它是不会浪费时间进行垃圾回收的。</p>
+<h4 id="11．registerNatives-方法"><a href="#11．registerNatives-方法" class="headerlink" title="11．registerNatives 方法"></a>11．registerNatives 方法</h4><p>本地方法、这个方法是用来注册本地方法的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">registerNatives</span><span class="params">()</span></span>;</span></pre></td></tr></table></figure>
+
+<p>静态代码块中调用了此方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">      registerNatives();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">object</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/02/Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%AC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Markdown介绍与基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -462,6 +607,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">object</a>
               </li>
             
             <div class="clearfix"></div>
