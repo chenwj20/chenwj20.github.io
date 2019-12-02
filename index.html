@@ -61,11 +61,11 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')"  target="_blank" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')"  target="_parent" href="javascript:void(0)">所有文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')"  target="_blank" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')"  target="_parent" href="javascript:void(0)">关于我</a>
     			
             
 			
@@ -151,21 +151,21 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Markdown介绍与基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+      <a class="article-title" href="/2019/12/01/Markdown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Markdown的介绍基本使用</a>
     </h1>
   
 
         
         
-<a href="/2019/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-11-29T06:49:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
+<a href="/2019/12/01/Markdown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2019-12-01T05:36:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-01</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -175,7 +175,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">93字</span>
+        <span class="post-count">386字</span>
       </span>
     </span>
 
@@ -195,13 +195,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JVM理解"><a href="#JVM理解" class="headerlink" title="JVM理解"></a>JVM理解</h2><p>​    java是一门跨平台的编程语言，这个特性的实现也是更具jvm来实现的，跨平台特性主要是说Java编译生成的字节码文件，也就是后缀名为.class的文件</p>
-<p>jvm运行区主要有5个：</p>
-<p>1.寄存器（程序计数器）</p>
-<p>2.方法区</p>
-<p>3.本地方法区</p>
-<p>4.堆</p>
-<p>5.栈</p>
+        <h1 id="Markdown是什么？"><a href="#Markdown是什么？" class="headerlink" title="Markdown是什么？"></a>Markdown是什么？</h1><p>​    Markdown是一种可以使用普通文本编辑器编写的<strong>轻量级标记语言</strong>，创始人为约翰·格鲁伯（John Gruber），通过简单的标记语法，它可以使普通文本内容具有一定的格式。其编写的文档可以导出 HTML 、Word、PDF等多种格式文档。编写的文档后缀为 .md, .markdown。</p>
+<p>​    由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息，比如大家所熟知的GItHub等。现在也越来越多人使用 Markdown来编写自己的博客。下面介绍一下Markdown的基本语法。</p>
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="1、标题"><a href="#1、标题" class="headerlink" title="1、标题"></a>1、标题</h2><p><strong>在标题前面加上#，#的个数代表标题级数，和HTML的h1~h6类似</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">#一级标题h1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">##二级标题h2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">###三级标题h3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">####四级标题h4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">#####五级标题h5</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">######六级标题h6</span></pre></td></tr></table></figure>
+
+<p>显示效果如下：</p>
+<p>#一级标题h1<br>##二级标题h2<br>###三级标题h3<br>####四级标题h4<br>#####五级标题h5<br>######六级标题h6  </p>
+<h2 id="2、字体"><a href="#2、字体" class="headerlink" title="2、字体"></a>2、字体</h2><p>​    我们有时候需要对文章中的重点部分标记一下或者使样式更加美观这时候就需要对字体进行一些操作了</p>
+<h4 id="2-1-斜体和粗体"><a href="#2-1-斜体和粗体" class="headerlink" title="2.1 斜体和粗体"></a>2.1 斜体和粗体</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">*我是斜体*    **我是粗体**   ***斜体加粗体***</span></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p>​    <em>我是斜体</em></p>
+<p>​    <strong>我是粗体</strong></p>
+<p>​    <strong><em>斜体加粗体</em></strong></p>
+<h4 id="2-4-字体格式及颜色"><a href="#2-4-字体格式及颜色" class="headerlink" title="2.4 字体格式及颜色"></a>2.4 字体格式及颜色</h4><p>​    </p>
+<p>​    </p>
+<p>​    </p>
 
       
 
@@ -210,11 +220,26 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">markdown</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/01/Markdown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -252,7 +277,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/29/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/11/29/hello-world/">Hello Hexo</a>
     </h1>
   
 
@@ -269,7 +294,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">73字</span>
+        <span class="post-count">134字</span>
       </span>
     </span>
 
@@ -290,6 +315,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>欢迎来到Hexo !这是你的第一篇文章。查看文档了解更多信息。如果你在使用Hexo时遇到任何问题，你可以在故障排除中找到答案，或者你可以在GitHub上问我</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
@@ -429,6 +455,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">教程</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
