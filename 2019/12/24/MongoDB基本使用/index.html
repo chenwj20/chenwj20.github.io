@@ -15,8 +15,10 @@
 <meta property="og:site_name" content="chenwj">
 <meta property="og:description" content="MongoDB的基本使用​    MongoDB是一个非关系型数据库,也就NoSQL数据库">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-24T15:10:44.754Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;25&#x2F;7RUxIi58b6B2vKO.png">
+<meta property="og:updated_time" content="2019-12-25T15:22:08.700Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;25&#x2F;7RUxIi58b6B2vKO.png">
   
     <link rel="alternative" href="/atom.xml" title="chenwj" type="application/atom+xml">
   
@@ -176,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">163字</span>
+        <span class="post-count">766字</span>
       </span>
     </span>
 
@@ -185,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -245,6 +247,55 @@
 </tr>
 </tbody></table>
 <p>通过下图实例，我们也可以更直观的了解Mongo中的一些概念：</p>
+<p><img src="https://i.loli.net/2019/12/25/7RUxIi58b6B2vKO.png" alt="4.png"></p>
+<p>1、一个mongodb实例可以创建多个数据库 </p>
+<p>2、一个数据库可以创建多个集合</p>
+<p>3、一个集合可以包括多个文档。 </p>
+<h4 id="2、连接MongoDB"><a href="#2、连接MongoDB" class="headerlink" title="2、连接MongoDB"></a>2、连接MongoDB</h4><p>mongodb的使用方式是客户服务器模式，即使用一个客户端连接mongodb数据库（服务端）。‘</p>
+<p>1、 命令格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mongodb:&#x2F;&#x2F;[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][&#x2F;[database][? options]]</span></pre></td></tr></table></figure>
+
+<p>mongodb:// 固定前缀 username：账号，可不填<br>password：密码，可不填 host：主机名或ip地址，只有host主机名为必填项。<br>port：端口，可不填，默认27017 /database：连接某一个数据库 ?options：连接参数，key/value对</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mongodb:&#x2F;&#x2F;localhost 连接本地数据库27017端口   </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mongodb:&#x2F;&#x2F;root:itcast@localhost 使用用户名root密码为itcast连接本地数据库27017端口   mongodb:&#x2F;&#x2F;localhost,localhost:27018,localhost:27019，连接三台主从服务器，端口为27017、27018、27019</span></pre></td></tr></table></figure>
+
+<p>2、使用mongodb自带的javascript shell（mongo.exe）连接</p>
+<p>​    直接进入bin目录打开mongo.exe客户端程序</p>
+<p>3、使用studio3T连接<br>4、使用java程序连接 </p>
+<h4 id="3、数据库"><a href="#3、数据库" class="headerlink" title="3、数据库"></a>3、数据库</h4><p>1、查询数据库 </p>
+<p>show dbs 查询全部数据库</p>
+<p>db 显示当前数据库</p>
+<p>2、创建数据库</p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">use DATABASE_NAME</span></pre></td></tr></table></figure>
+
+<p>例子：<br>use test01</p>
+<p>有test01数据库则切换到此数据库，没有则创建。</p>
+<p>注意：<br>新创建的数据库不显示，需要至少包括一个集合。</p>
+<p>3、删除数据库（慎用！！！）<br>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<p>删除test01数据库 </p>
+<p>先切换数据库：use test01</p>
+<p>再执行删除：db.dropDatabase() </p>
+<h4 id="4、集合"><a href="#4、集合" class="headerlink" title="4、集合"></a>4、集合</h4><p>集合相当于关系数据库中的表，一个数据库可以创建多个集合，一个集合是将相同类型的文档管理起来。</p>
+<p>1、创建集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">db.createCollection(name,options)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">name：新创建的集合名称</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">options：创建参数</span></pre></td></tr></table></figure>
+
+<p>2、删除集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">db.collecton.drop()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">例子：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">db.student.drop() 删除student集合</span></pre></td></tr></table></figure>
+
+<p>3、查询集合</p>
+<p>如果要查看已有集合，可以使用 show collections 或 show tables 命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">show collections</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">show tables</span></pre></td></tr></table></figure>
+
+<p>在 MongoDB 中，你不需要创建集合。当你插入一些文档时，MongoDB 会自动创建集合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;db.food.insert(&#123;&quot;name&quot;:&quot;苹果&quot;,&quot;color&quot;:&quot;红色&quot;&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&gt;show collections</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">food</span></pre></td></tr></table></figure>
+
+<h4 id="5、文档"><a href="#5、文档" class="headerlink" title="5、文档"></a>5、文档</h4><p>mongodb中文档的格式是json格式，下边就是一个文档，包括两个key：_id主键和name</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    &quot;_id&quot; : ObjectId(&quot;5e02283ee46a562d0b8ce4ac&quot;), </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &quot;name&quot; : &quot;张三&quot;, </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &quot;age&quot; : 20.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
 
       
 
@@ -505,14 +556,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">object</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
               </li>
              
@@ -521,15 +564,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">object</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">-接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">彩票</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">记事</a>
               </li>
             
             <div class="clearfix"></div>
