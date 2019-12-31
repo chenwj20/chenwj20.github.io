@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>接口和抽象类 | chenwj</title>
+  <title>Tag: then()方法 | chenwj</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="接口和抽象类到底有什么异同？​    每次想到这个问题都想不全，虽然没有被问道过这个题目，但是还是有必要记录一下">
-<meta name="keywords" content="接口">
-<meta property="og:type" content="article">
-<meta property="og:title" content="接口和抽象类">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;26&#x2F;%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="chenwj">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;then-%E6%96%B9%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="chenwj">
-<meta property="og:description" content="接口和抽象类到底有什么异同？​    每次想到这个问题都想不全，虽然没有被问道过这个题目，但是还是有必要记录一下">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-31T04:09:50.732Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="chenwj" type="application/atom+xml">
@@ -153,315 +149,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-接口和抽象类" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      接口和抽象类
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2019/12/26/then/" class="archive-article-date">
+  	<time datetime="2019-12-26T14:58:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/26/then/">then</a>
     </h1>
   
 
-        
-        
-<a href="/2019/12/26/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2019-12-26T01:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.5k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
-      </span>
-    </span>
-</div>
+        <div class="article-info info-on-right">
           
-        <!-- 添加完成 -->
-	   
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="接口和抽象类到底有什么异同？"><a href="#接口和抽象类到底有什么异同？" class="headerlink" title="接口和抽象类到底有什么异同？"></a>接口和抽象类到底有什么异同？</h3><p>​    每次想到这个问题都想不全，虽然没有被问道过这个题目，但是还是有必要记录一下</p>
-<a id="more"></a>
-
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>抽象类</th>
-<th>接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>默认的方法实现</td>
-<td>它可以有默认的方法实现</td>
-<td>接口完全是抽象的。它根本不存在方法的实现</td>
-</tr>
-<tr>
-<td>实现</td>
-<td>子类使用 extends 关键字来继承抽象类。如果子类不是抽象类的话，它需要提供抽象类中所有声明的方法的实现。</td>
-<td>子类使用关键字 implements 来实现接口。它需要提供接口中所有声明的方法的实现</td>
-</tr>
-<tr>
-<td>构造器</td>
-<td>抽象类可以有构造器</td>
-<td>接口不能有构造器</td>
-</tr>
-<tr>
-<td>与正常 Java 类的区别</td>
-<td>除了你不能实例化抽象类之外，它和普通Java类没有任何区别</td>
-<td>接口是完全不同的类型</td>
-</tr>
-<tr>
-<td>访问修饰符</td>
-<td>抽象方法可以有 public、protected 和 default 这些修饰符</td>
-<td>接口方法默认修饰符是 public。你不可以使用其它修饰符。（看jdk版本）</td>
-</tr>
-<tr>
-<td>main 方法</td>
-<td>抽象方法可以有 main 方法并且我们可以运行它</td>
-<td>接口没有 main 方法，因此我们不能运行它。</td>
-</tr>
-<tr>
-<td>多继承</td>
-<td>抽象方法可以继承一个类和实现多个接口</td>
-<td>接口只可以继承一个或多个其它接口</td>
-</tr>
-<tr>
-<td>速度</td>
-<td>它比接口速度要快</td>
-<td>接口是稍微有点慢的，因为它需要时间去寻找在类中实现的方法。</td>
-</tr>
-<tr>
-<td>添加新方法</td>
-<td>如果你往抽象类中添加新的方法，你可以给它提供默认的实现。因此你不需要改变你现在的代码。</td>
-<td>如果你往接口中添加方法，那么你必须改变实现该接口的类。</td>
-</tr>
-</tbody></table>
-<p>jdk1.8后，接口方法可以有方法体，需要用default或static修饰。实现类无需重新。当然default方法重写也是可以的。如果一个类实现多个接口，多个接口有相同default方法，则子类必须重写该方法</p>
-<p><strong>注意：</strong></p>
-<p>关于抽象类<br>JDK 1.8以前，抽象类的方法默认访问权限为protected<br>JDK 1.8时，抽象类的方法默认访问权限变为default<br>关于接口<br>JDK 1.8以前，接口中的方法必须是public的<br>JDK 1.8时，接口中的方法可以是public的，也可以是default的<br>JDK 1.9时，接口中的方法可以是private的</p>
-<p><strong>我总结出以下几点：</strong></p>
-<p><strong>不同：</strong><br>抽象类：<br>1.抽象类中可以定义构造器<br>2.可以有抽象方法和具体方法<br>3.接口中的成员全都是public的 （jdk8以前）<br>4.抽象类中可以定义成员变量<br>5.有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法<br>6.抽象类中可以包含静态方法<br>7.一个类只能继承一个抽象类 （java单继承特性）</p>
-<p>接口：<br>1.接口中不能定义构造器<br>2.方法全部都是抽象方法<br>3.抽象类中的成员可以是 private、默认、protected、public<br>4.接口中定义的成员变量实际上都是常量<br>5.接口中不能有静态方法<br>6.一个类可以实现多个接口 </p>
-<p><strong>相同：</strong><br>1.不能够实例化<br>2.可以将抽象类和接口类型作为引用类型<br>3.一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要<br>被声明为抽象类</p>
-<p>扩展：</p>
-<p><strong>那抽象类实现接口呢？</strong>（某次在做一个选择题时，有点懵）</p>
-<p>1.抽象类肯定可以实现接口； </p>
-<p>2.抽象类实现接口可以不实现方法，也可以实现接口中的部分方法（都是抽象的，如果抽象类实现接口然后重写抽象类方法，岂不是失去了抽象的概念！）</p>
-<p>抽象类实现接口有什么意义呢？</p>
-<p>​    有的时候需要将接口和抽象类配合起来使用，这样可以为开发者提供相当的便利性，开发者觉得哪个方便就选用哪个。这样的抽象类称为便利类。此时，便利类并不需要实现接口的所有方法，可以留给继承它的子类去实现它们。</p>
-<p>在Java中，使用抽象类来实现接口，并不是毫无作用。相反，有时间有很大的作用。</p>
-<p>​      当你只想实现接口中的个别方法（不是所有方法）时，你可以先写一个抽象类来实现该接口，并实现除了你想要的方法之外的所有方法（方法体为空）。接着再用你的类继承这个抽象类，这个类中就只用实现你需要的方法了，这样就可以达到你的需要了。但是，如果你直接实现接口的话，你就需要实现接口的所有方法。</p>
-<p>通过下面例子，可以很好的理解：</p>
-<p>例：</p>
-<p>有一个接口Window，有三个方法，draw(),putColor(),setPosition()三个方法，程序员在设计页面时只关注对其进行位置定位（画图draw()和着色putColor()则由美工实现），所以他只需要实现setPosition()方法，而其余两个不用实现。则设计如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">      <span class="class"><span class="keyword">interface</span> <span class="title">Window</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">putColor</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPosition</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="comment">      *抽象类，不实现需要的方法。而实现的不需要的方法的方法体设为空，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="comment">      */</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">     <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">DesignedPage</span> <span class="keyword">implements</span> <span class="title">Window</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">putColor</span><span class="params">()</span></span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">     &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">     </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"><span class="comment">       * 具体实现类，实现特定的方法，该类中只有需要的方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"><span class="comment">       */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DesingedPageA</span>  <span class="keyword">extends</span> <span class="title">DesignedPage</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPosition</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">                   <span class="comment">//set the window position</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">             &#125;   </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr></table></figure>
-
-<p> 通常情况下，如果我们需要在具体实现类中实现draw()方法时，都是调用父类的draw()方法（super.draw()）</p>
-<p>参考<a href="https://www.cnblogs.com/IanI/p/4549851.html" target="_blank" rel="noopener">博客</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>听说，打赏我的人会幸福一辈子哦<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">接口</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">then()方法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/26/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/12/26/then/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          then
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/12/24/NoSQL%E5%9F%BA%E6%9C%AC%E7%AE%80%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NoSQL基本简介</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
     
-      <div class="valine_comment"></div>
-<!--����js����</body>֮ǰ���뼴��-->
-<!--Leancloud ������:-->
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<!--Valine �ĺ��Ĵ����-->
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-  var notify = 'true' == true ? true : false;
-  var verify = 'false' == true ? true : false;
-  new Valine({
-      // AV ����������������av-min.js(��˾���ǲ�Ҫ����??�a����������)
-      av: AV,
-      el: '.valine_comment',
-      emoticon_url: 'https://cloud.panjunwen.com/alu',
-      emoticon_list: ["��.png","��˵��.png","��.png","����.png","�׻�.png","������.png","�е�.png","����.png","��ü.png","С�۾�.png","���ع۲�.png"],
-      app_id: 'V5ubOvdmXGv4UuXe64QhQM1E-gzGzoHsz',
-      app_key: '8HOSFyEISu2Lr1H8XhrJak1s',
-      placeholder: '有话要说？'
-    });
-</script>
-
-    
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
 
 
           </div>
@@ -485,9 +231,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

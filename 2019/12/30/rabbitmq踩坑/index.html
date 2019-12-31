@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>接口和抽象类 | chenwj</title>
+  <title>rabbitmq踩坑 | chenwj</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="接口和抽象类到底有什么异同？​    每次想到这个问题都想不全，虽然没有被问道过这个题目，但是还是有必要记录一下">
-<meta name="keywords" content="接口">
+  <meta name="description" content="记录一次RabbitMQ踩坑最近做一个项目的时候用到了rabbitmq，为了图方便没在官网下  第一次踩坑就出现了： ​    erlang版本必须与rabbitmq相对应，what？  ​    好吧，我重新卸了重新安装 第二次踩坑 ​    啥啊，重新安装又出错，还各种错误 ​    ok，百度一下，原因：没卸载干净！ ​    好吧，我就把你俩卸得一个不留 卸载步骤如下： （1）打开Wind">
+<meta name="keywords" content="坑,rabbitmq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="接口和抽象类">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;26&#x2F;%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB&#x2F;index.html">
+<meta property="og:title" content="rabbitmq踩坑">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;30&#x2F;rabbitmq%E8%B8%A9%E5%9D%91&#x2F;index.html">
 <meta property="og:site_name" content="chenwj">
-<meta property="og:description" content="接口和抽象类到底有什么异同？​    每次想到这个问题都想不全，虽然没有被问道过这个题目，但是还是有必要记录一下">
+<meta property="og:description" content="记录一次RabbitMQ踩坑最近做一个项目的时候用到了rabbitmq，为了图方便没在官网下  第一次踩坑就出现了： ​    erlang版本必须与rabbitmq相对应，what？  ​    好吧，我重新卸了重新安装 第二次踩坑 ​    啥啊，重新安装又出错，还各种错误 ​    ok，百度一下，原因：没卸载干净！ ​    好吧，我就把你俩卸得一个不留 卸载步骤如下： （1）打开Wind">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-31T04:09:50.732Z">
+<meta property="og:updated_time" content="2019-12-31T04:09:38.221Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="chenwj" type="application/atom+xml">
@@ -153,21 +153,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-接口和抽象类" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-rabbitmq踩坑" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      接口和抽象类
+      rabbitmq踩坑
     </h1>
   
 
         
         
-<a href="/2019/12/26/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2019-12-26T01:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+<a href="/2019/12/30/rabbitmq%E8%B8%A9%E5%9D%91/" class="archive-article-date">
+  	<time datetime="2019-12-30T15:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -177,7 +177,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.5k字</span>
+        <span class="post-count">768字</span>
       </span>
     </span>
 
@@ -186,7 +186,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
+        <span class="post-count">2分</span>
       </span>
     </span>
 </div>
@@ -197,85 +197,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="接口和抽象类到底有什么异同？"><a href="#接口和抽象类到底有什么异同？" class="headerlink" title="接口和抽象类到底有什么异同？"></a>接口和抽象类到底有什么异同？</h3><p>​    每次想到这个问题都想不全，虽然没有被问道过这个题目，但是还是有必要记录一下</p>
-<a id="more"></a>
+        <h3 id="记录一次RabbitMQ踩坑"><a href="#记录一次RabbitMQ踩坑" class="headerlink" title="记录一次RabbitMQ踩坑"></a>记录一次RabbitMQ踩坑</h3><p>最近做一个项目的时候用到了rabbitmq，为了图方便没在官网下</p>
+<p> <strong>第一次踩坑</strong>就出现了：</p>
+<p>​    <strong>erlang版本必须与rabbitmq相对应</strong>，what？ </p>
+<p>​    好吧，我重新卸了重新安装</p>
+<p><strong>第二次踩坑</strong></p>
+<p>​    啥啊，重新安装又出错，还各种错误</p>
+<p>​    ok，百度一下，原因：<strong>没卸载干净！</strong></p>
+<p>​    好吧，我就把你俩卸得一个不留</p>
+<p>卸载步骤如下：</p>
+<p>（1）打开Windows控制面板，双击“程序和功能”。</p>
+<p>（2）在当前安装的程序列表中，右键单击RabbitMQ Server，然后单击“卸载”。</p>
+<p>（3）在当前安装的程序列表中，右键单击“Erlang OTP”，然后单击“卸载”。</p>
+<p>（4）打开Windows任务管理器。</p>
+<p>（5）在任务管理器中，查找进程epmd.exe。 如果此进程仍在运行，请右键单击该进程，然后单击“结束进程”。</p>
+<p>（6）删除RabbitMQ和Erlang的所有安装目录。</p>
+<p>（7）删除文件C:\Windows\System32\config\systemprofile.erlang.cookie（如果存在）。</p>
+<p>（8）转到用户文件夹：C：\ Users \ [username]，然后删除文件.erlang.cookie。删除</p>
+<p>（9）同样在User文件夹中，转到AppData \ Roaming \ RabbitMQ。删除RabbitMQ文件夹。</p>
+<p>（10）删除注册表HKEY_LOCAL_MACHINE\SOFTWARE\Ericsson\Erlang\ErlSrv的子项。</p>
+<p>（11）打开运行cmd-&gt;sc delete RabbitMQ。</p>
+<p>（12）打开运行-&gt;regedit 找到RabbitMQ节点，删掉即可。</p>
+<p> <em>心想这次总该好了吧<del>~</del>，然而并没有</em></p>
+<p><strong>第三次踩坑：</strong></p>
+<p>废了一大番功夫，终于安装好了</p>
+<p>开心的在cmd窗口输入一串命令</p>
+<p>1、安装服务 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rabbitmq-service.bat install</span></pre></td></tr></table></figure>
 
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>抽象类</th>
-<th>接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>默认的方法实现</td>
-<td>它可以有默认的方法实现</td>
-<td>接口完全是抽象的。它根本不存在方法的实现</td>
-</tr>
-<tr>
-<td>实现</td>
-<td>子类使用 extends 关键字来继承抽象类。如果子类不是抽象类的话，它需要提供抽象类中所有声明的方法的实现。</td>
-<td>子类使用关键字 implements 来实现接口。它需要提供接口中所有声明的方法的实现</td>
-</tr>
-<tr>
-<td>构造器</td>
-<td>抽象类可以有构造器</td>
-<td>接口不能有构造器</td>
-</tr>
-<tr>
-<td>与正常 Java 类的区别</td>
-<td>除了你不能实例化抽象类之外，它和普通Java类没有任何区别</td>
-<td>接口是完全不同的类型</td>
-</tr>
-<tr>
-<td>访问修饰符</td>
-<td>抽象方法可以有 public、protected 和 default 这些修饰符</td>
-<td>接口方法默认修饰符是 public。你不可以使用其它修饰符。（看jdk版本）</td>
-</tr>
-<tr>
-<td>main 方法</td>
-<td>抽象方法可以有 main 方法并且我们可以运行它</td>
-<td>接口没有 main 方法，因此我们不能运行它。</td>
-</tr>
-<tr>
-<td>多继承</td>
-<td>抽象方法可以继承一个类和实现多个接口</td>
-<td>接口只可以继承一个或多个其它接口</td>
-</tr>
-<tr>
-<td>速度</td>
-<td>它比接口速度要快</td>
-<td>接口是稍微有点慢的，因为它需要时间去寻找在类中实现的方法。</td>
-</tr>
-<tr>
-<td>添加新方法</td>
-<td>如果你往抽象类中添加新的方法，你可以给它提供默认的实现。因此你不需要改变你现在的代码。</td>
-<td>如果你往接口中添加方法，那么你必须改变实现该接口的类。</td>
-</tr>
-</tbody></table>
-<p>jdk1.8后，接口方法可以有方法体，需要用default或static修饰。实现类无需重新。当然default方法重写也是可以的。如果一个类实现多个接口，多个接口有相同default方法，则子类必须重写该方法</p>
-<p><strong>注意：</strong></p>
-<p>关于抽象类<br>JDK 1.8以前，抽象类的方法默认访问权限为protected<br>JDK 1.8时，抽象类的方法默认访问权限变为default<br>关于接口<br>JDK 1.8以前，接口中的方法必须是public的<br>JDK 1.8时，接口中的方法可以是public的，也可以是default的<br>JDK 1.9时，接口中的方法可以是private的</p>
-<p><strong>我总结出以下几点：</strong></p>
-<p><strong>不同：</strong><br>抽象类：<br>1.抽象类中可以定义构造器<br>2.可以有抽象方法和具体方法<br>3.接口中的成员全都是public的 （jdk8以前）<br>4.抽象类中可以定义成员变量<br>5.有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法<br>6.抽象类中可以包含静态方法<br>7.一个类只能继承一个抽象类 （java单继承特性）</p>
-<p>接口：<br>1.接口中不能定义构造器<br>2.方法全部都是抽象方法<br>3.抽象类中的成员可以是 private、默认、protected、public<br>4.接口中定义的成员变量实际上都是常量<br>5.接口中不能有静态方法<br>6.一个类可以实现多个接口 </p>
-<p><strong>相同：</strong><br>1.不能够实例化<br>2.可以将抽象类和接口类型作为引用类型<br>3.一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要<br>被声明为抽象类</p>
-<p>扩展：</p>
-<p><strong>那抽象类实现接口呢？</strong>（某次在做一个选择题时，有点懵）</p>
-<p>1.抽象类肯定可以实现接口； </p>
-<p>2.抽象类实现接口可以不实现方法，也可以实现接口中的部分方法（都是抽象的，如果抽象类实现接口然后重写抽象类方法，岂不是失去了抽象的概念！）</p>
-<p>抽象类实现接口有什么意义呢？</p>
-<p>​    有的时候需要将接口和抽象类配合起来使用，这样可以为开发者提供相当的便利性，开发者觉得哪个方便就选用哪个。这样的抽象类称为便利类。此时，便利类并不需要实现接口的所有方法，可以留给继承它的子类去实现它们。</p>
-<p>在Java中，使用抽象类来实现接口，并不是毫无作用。相反，有时间有很大的作用。</p>
-<p>​      当你只想实现接口中的个别方法（不是所有方法）时，你可以先写一个抽象类来实现该接口，并实现除了你想要的方法之外的所有方法（方法体为空）。接着再用你的类继承这个抽象类，这个类中就只用实现你需要的方法了，这样就可以达到你的需要了。但是，如果你直接实现接口的话，你就需要实现接口的所有方法。</p>
-<p>通过下面例子，可以很好的理解：</p>
-<p>例：</p>
-<p>有一个接口Window，有三个方法，draw(),putColor(),setPosition()三个方法，程序员在设计页面时只关注对其进行位置定位（画图draw()和着色putColor()则由美工实现），所以他只需要实现setPosition()方法，而其余两个不用实现。则设计如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">      <span class="class"><span class="keyword">interface</span> <span class="title">Window</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">putColor</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPosition</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="comment">      *抽象类，不实现需要的方法。而实现的不需要的方法的方法体设为空，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="comment">      */</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">     <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">DesignedPage</span> <span class="keyword">implements</span> <span class="title">Window</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">putColor</span><span class="params">()</span></span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">     &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">     </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"><span class="comment">       * 具体实现类，实现特定的方法，该类中只有需要的方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line"><span class="comment"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"><span class="comment">       */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DesingedPageA</span>  <span class="keyword">extends</span> <span class="title">DesignedPage</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPosition</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">                   <span class="comment">//set the window position</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">             &#125;   </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr></table></figure>
+<p>2、停止服务</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rabbitmq-service.bat stop</span></pre></td></tr></table></figure>
 
-<p> 通常情况下，如果我们需要在具体实现类中实现draw()方法时，都是调用父类的draw()方法（super.draw()）</p>
-<p>参考<a href="https://www.cnblogs.com/IanI/p/4549851.html" target="_blank" rel="noopener">博客</a></p>
+<p> 3、启动服务 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rabbitmq-service.bat start</span></pre></td></tr></table></figure>
+
+<p>4、安装管理插件<br>    安装rabbitMQ的管理插件，方便在浏览器端管理RabbitMQ 管理员身份运行 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rabbitmq-plugins.bat enable rabbitmq_management</span></pre></td></tr></table></figure>
+
+<p>5、启动成功 登录RabbitMQ 进入浏览器，输入：<a href="http://localhost:15672" target="_blank" rel="noopener">http://localhost:15672</a></p>
+<p>？？？？？？？？</p>
+<p>浏览器咋没反应？？？</p>
+<p>想了想看看rabbitmq服务启动没，于是去任务管理器去看了看</p>
+<p>竟然没启动！！！</p>
+<p>好吧，手动启动一下</p>
+<p>于是又去浏览器</p>
+<p>咋还是没反应呢？</p>
+<p>服务竟然又关了。。。。。</p>
+<p>服务启动后几秒钟自动停止，而且反反复复。</p>
+<p>ok，百度看看吧</p>
+<p>看了一大堆，试过n种方法，不停的卸载重装，结果只有一个          <strong>没用</strong></p>
+<p>最后还是找到了方法   也算是终于解决了</p>
+<p>方法如下：</p>
+<p>​    出现这种情况一般都是由我们的用户名是中文，而导致默认的DB和log访问出现问。所以我建议以后大家在使用windows操作系统的时候尽量用英文来命名文件或目录，这样会极大的减小以后安装软件出现莫名其妙的问题的bug。<br>    接下来我们先卸载我们的RabbitMQ，然后在我们的<strong>系统变量里设置一个RABBITMQ_BASE 的变量路径为一个不含英文的路径</strong> 比如 E:\rabbit，最后我们重新安装RabbitMQ即可，然后就会看到RabbitMQ服务自动注册了，并且不会自动停止。 </p>
+<p>ok,完美解决</p>
+<p>。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p>
 
       
 
@@ -320,7 +295,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">接口</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">坑</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">rabbitmq</a>
         		</li>
       		
 		</ul>
@@ -376,7 +355,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/26/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/30/rabbitmq%E8%B8%A9%E5%9D%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -390,18 +369,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/26/then/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          then
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/24/NoSQL%E5%9F%BA%E6%9C%AC%E7%AE%80%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NoSQL基本简介</div>
+    <a href="/2019/12/29/ArraryList%E7%A0%94%E7%A9%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ArraryList研究</div>
       <i class="icon-circle-right"></i>
     </a>
   
