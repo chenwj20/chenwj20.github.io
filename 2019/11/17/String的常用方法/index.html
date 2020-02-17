@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: rabbitmq | chenwj</title>
+  <title>String的常用方法 | chenwj</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="chenwj">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;rabbitmq&#x2F;index.html">
+  <meta name="description" content="String常用方法一、String类构造方法1、public String()无参构造方法，用来创建空字符串的String对象。 2、public String(String value)用已知的字符串value创建一个String对象。 3、public String(char[] value)用字符数组value创建一个String对象。 4、public String(char chars">
+<meta name="keywords" content="-string">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String的常用方法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;String%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="chenwj">
+<meta property="og:description" content="String常用方法一、String类构造方法1、public String()无参构造方法，用来创建空字符串的String对象。 2、public String(String value)用已知的字符串value创建一个String对象。 3、public String(char[] value)用字符数组value创建一个String对象。 4、public String(char chars">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-17T01:00:31.975Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="chenwj" type="application/atom+xml">
@@ -149,65 +153,260 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-String的常用方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/12/30/rabbitmq%E8%B8%A9%E5%9D%91/" class="archive-article-date">
-  	<time datetime="2019-12-30T15:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/30/rabbitmq%E8%B8%A9%E5%9D%91/">rabbitmq踩坑</a>
+    <h1 class="article-title" itemprop="name">
+      String的常用方法
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        
+<a href="/2019/11/17/String%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-11-17T00:57:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.2k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
           
+        <!-- 添加完成 -->
+	   
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="String常用方法"><a href="#String常用方法" class="headerlink" title="String常用方法"></a>String常用方法</h1><h3 id="一、String类构造方法"><a href="#一、String类构造方法" class="headerlink" title="一、String类构造方法"></a>一、String类构造方法</h3><p><strong>1、public String()</strong>无参构造方法，用来创建空字符串的String对象。</p>
+<p><strong>2、public String(String value)</strong>用已知的字符串value创建一个String对象。</p>
+<p><strong>3、public String(char[] value)</strong>用字符数组value创建一个String对象。</p>
+<p><strong>4、public String(char chars[], int startIndex, int numChars)</strong>用字符数组chars的startIndex开始的numChars个字符创建一个String对象。</p>
+<p><strong>5、public String(byte[] bytes)</strong> ：通过使用平台的默认字符集解码当前参数中的字节数组来构造新的 </p>
+<p>String</p>
+<a id="more"></a>
+
+<h2 id="二、常用方法"><a href="#二、常用方法" class="headerlink" title="二、常用方法"></a>二、常用方法</h2><h4 id="1、字符操作"><a href="#1、字符操作" class="headerlink" title="1、字符操作"></a><strong>1、字符操作</strong></h4><p><strong>1）、public int length()</strong>//返回该字符串的长度</p>
+<p><strong>2）、public char charAt(int index)</strong>//返回字符串中指定位置的字符；</p>
+<p><strong>3）、public String substring(int beginIndex)</strong>//该方法从beginIndex位置起，从当前字符串中取出剩余的字符作为一个新的字符串返回。</p>
+<p><strong>4）、public String substring(int beginIndex, int endIndex)</strong>//该方法从beginIndex位置起，从当前字符串中取出到endIndex-1位置的字符作为一个新的字符串返回。</p>
+<h4 id="2、字符串比较"><a href="#2、字符串比较" class="headerlink" title="2、字符串比较"></a><strong>2、字符串比较</strong></h4><p><strong>1、public int compareTo(String anotherString)</strong>//该方法是对字符串内容按字典顺序进行大小比较，通过返回的整数值指明当前字符串与参数字符串的大小关系。若当前对象比参数大则返回正整数，反之返回负整数，相等返回0。<br><strong>2、public int compareToIgnore(String anotherString)</strong>//与compareTo方法相似，但忽略大小写。<br><strong>3、public boolean equals(Object anotherObject)</strong>//比较当前字符串和参数字符串，在两个字符串相等的时候返回true，否则返回false。<br><strong>4、public boolean equalsIgnoreCase</strong>(String anotherString)//与equals方法相似，但忽略大小写。 </p>
+<h4 id="3、字符串连接"><a href="#3、字符串连接" class="headerlink" title="3、字符串连接"></a><strong>3、字符串连接</strong></h4><p><strong>1、public String concat(String str)</strong>//将参数中的字符串str连接到当前字符串的后面，效果等价于”+”。</p>
+<h4 id="4、字符串中单个字符查找"><a href="#4、字符串中单个字符查找" class="headerlink" title="4、字符串中单个字符查找"></a>4、字符串中单个字符查找</h4><p><strong>1)public int indexOf(int ch/String str)</strong>//用于查找当前字符串中字符或子串，返回字符或子串在当前字符串中从左边起首次出现的位置，若没有出现则返回-1。<br><strong>2)public int indexOf(int ch/String str, int fromIndex)</strong>//改方法与第一种类似，区别在于该方法从fromIndex位置向后查找。<br><strong>3)public int lastIndexOf(int ch/String str)</strong>//该方法与第一种类似，区别在于该方法从字符串的末尾位置向前查找。<br><strong>4)public int lastIndexOf(int ch/String str, int fromIndex)</strong>//该方法与第二种方法类似，区别于该方法从fromIndex位置向前查找。 </p>
+<h4 id="5、字符串中字符的大小写转换"><a href="#5、字符串中字符的大小写转换" class="headerlink" title="5、字符串中字符的大小写转换"></a>5、字符串中字符的大小写转换</h4><p><strong>1)public String toLowerCase()</strong>//返回将当前字符串中所有字符转换成小写后的新串<br><strong>2)public String toUpperCase()</strong>//返回将当前字符串中所有字符转换成大写后的新串</p>
+<h4 id="6、字符串中字符的替换"><a href="#6、字符串中字符的替换" class="headerlink" title="6、字符串中字符的替换"></a>6、字符串中字符的替换</h4><p><strong>1)public String replace(char oldChar, char newChar)</strong>//用字符newChar替换当前字符串中所有的oldChar字符，并返回一个新的字符串。<br><strong>2)public String replaceFirst(String regex, String replacement)</strong>//该方法用字符replacement的内容替换当前字符串中遇到的第一个和字符串regex相匹配的子串，应将新的字符串返回。<br><strong>3)public String replaceAll(String regex, String replacement)</strong>//该方法用字符replacement的内容替换当前字符串中遇到的所有和字符串regex相匹配的子串，应将新的字符串返回。</p>
+<h4 id="7、其他类方法"><a href="#7、其他类方法" class="headerlink" title="7、其他类方法"></a>7、其他类方法</h4><p><strong>1)String trim()</strong>//截去字符串两端的空格，但对于中间的空格不处理。</p>
+<p><strong>2)boolean statWith(String prefix)或boolean endWith(String suffix)</strong>//用来比较当前字符串的起始字符或子字符串prefix和终止字符或子字符串suffix是否和当前字符串相同，重载方法中同时还可以指定比较的开始位置offset。</p>
+<p><strong>3)regionMatches(boolean b, int firstStart, String other, int otherStart, int length)</strong>//从当前字符串的firstStart位置开始比较，取长度为length的一个子字符串，other字符串从otherStart位置开始，指定另外一个长度为length的字符串，两字符串比较，当b为true时字符串不区分大小写。<br><strong>4)contains(String str)</strong>//判断参数s是否被包含在字符串中，并返回一个布尔类型的值。</p>
+<p><strong>5)String[] split(String str)</strong>//将str作为分隔符进行字符串分解，分解后的字字符串在字符串数组中返回。<br><strong>6）public char[] toCharArray ()</strong> ：将此字符串转换为新的字符数组。 </p>
+<p><strong>7)public byte[] getBytes ()</strong> ：使用平台的默认字符集将该 String编码转换为新的字节数组。 </p>
+<h4 id="8、基本类型转换为字符串类型"><a href="#8、基本类型转换为字符串类型" class="headerlink" title="8、基本类型转换为字符串类型"></a>8、基本类型转换为字符串类型</h4><p>String类中提供了String valueOf()放法，用作基本类型转换为字符串类型。<br>1)static String valueOf(char data[])<br>2)static String valueOf(char data[], int offset, int count)<br>3)static String valueOf(boolean b)<br>4)static String valueOf(char c)<br>5)static String valueOf(int i)<br>6)static String valueOf(long l)<br>7)static String valueOf(float f)<br>8)static String valueOf(double d)</p>
+<p>以上就是String类基本方法</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听说，打赏我的人会幸福一辈子哦<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">坑</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">rabbitmq</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">-string</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/17/String%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/12/01/Markdown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Markdown的介绍基本使用
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/11/16/Java%E8%99%9A%E6%8B%9F%E6%9C%BA-JVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java基本知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
     
+      <div class="valine_comment"></div>
+<!--����js����</body>֮ǰ���뼴��-->
+<!--Leancloud ������:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine �ĺ��Ĵ����-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+      // AV ����������������av-min.js(��˾���ǲ�Ҫ����??�a����������)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["��.png","��˵��.png","��.png","����.png","�׻�.png","������.png","�е�.png","����.png","��ü.png","С�۾�.png","���ع۲�.png"],
+      app_id: 'V5ubOvdmXGv4UuXe64QhQM1E-gzGzoHsz',
+      app_key: '8HOSFyEISu2Lr1H8XhrJak1s',
+      placeholder: '有话要说？'
+    });
+</script>
+
+    
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -231,9 +430,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
